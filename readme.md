@@ -9,7 +9,7 @@
 Часть 1: Backend-разработка
 
 ## Разработайте простой backend-сервис на Python (Flask или Django), реализующий API для чата в приложении.
-chat/getResponse;
+/chat/;
 
 ## Реализуйте CRUD-функционал и интеграцию с PostgreSQL (используйте миграции).
 /messages/;
@@ -18,25 +18,23 @@ chat/getResponse;
 # Часть 2: Деплой и инфраструктура
 ## Подготовьте Dockerfile и docker-compose конфигурацию для backend-сервиса.
 ## Настройте контейнеризацию приложения и базы данных PostgreSQL.
-sudo docker-compose up --build
+sudo docker-compose up --build;
 
 ## Разверните приложение локально и убедитесь в стабильности и корректности работы.
-// ++
+sudo docker-compose up;
 # Часть 3: Тестирование и мониторинг
 ## Напишите простые тесты для backend-функционала.
 // tests.py
 
-Настройте базовый мониторинг состояния backend-приложения (Zabbix или Prometheus).
-// ++
+## Настройте базовый мониторинг состояния backend-приложения (Zabbix или Prometheus).
+/metrics
 # Итог сдачи задания
-## Исходный код backend-приложения с комментариями.
-// https://github.com/tachikoma-av/wace_test
-Dockerfile и docker-compose конфигурации.
-// ++
+## Исходный код backend-приложения с комментариями. Dockerfile и docker-compose конфигурации.
+https://github.com/tachikoma-av/wace_test
 ## Скриншоты работающего приложения, мониторинга и статуса контейнеров.
-// ./results/*
+./results/*
 
 
 Срок выполнения:
-3 рабочих дня. 11.3.25-14.3.25
+3 рабочих дня. 11.3.25-13.3.25
 Удачи!

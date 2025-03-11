@@ -1,10 +1,14 @@
 import requests
 
 if __name__ == "__main__":
-  r = requests.post("http://127.0.0.1:5000/messages/", json={"content":"howtot", "user_id":123})
-  r = requests.get("http://127.0.0.1:5000/messages")
-  r = requests.get("http://127.0.0.1:5000/messages/1")
-  r = requests.put("http://127.0.0.1:5000/messages/1", json={"content":"anothermsg", "user_id":123})
-  r = requests.delete("http://127.0.0.1:5000/messages/1")
-
-  r = requests.post("http://127.0.0.1:5000/chat/", json={"content":"howtot", "user_id":123})
+  endpoint = "http://172.23.63.100:5000"
+  r = requests.post(f"{endpoint}/messages/", json={"content":"howtot", "user_id":123})
+  print(r.text);
+  r = requests.get(f"{endpoint}/messages")
+  print(r.text);
+  r = requests.put(f"{endpoint}/messages/1", json={"content":"anothermsg", "user_id":123})
+  print(r.text);
+  r = requests.delete(f"{endpoint}/messages/1")
+  print(r.text);
+  r = requests.post(f"{endpoint}/chat/", json={"content":"howtot", "user_id":123})
+  print('done');
