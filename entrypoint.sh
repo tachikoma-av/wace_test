@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Waiting for PostgreSQL to start..."
-while ! nc -z db 5432; do sleep 1; done  # Ожидаем, пока PostgreSQL запустится
+while ! timeout 1 bash -c 'echo > /dev/tcp/db/5432'; do sleep 1; done
 
 echo "Initializing database migrations..."
 if [ ! -d "migrations" ]; then
