@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, abort, Blueprint
+from flask import request, jsonify, abort, Blueprint
 from models import db, Message
 
 
