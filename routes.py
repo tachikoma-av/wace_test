@@ -28,6 +28,8 @@ def get_messages():
 @messages_bp.route('/', methods=['POST'])
 def create_message():
     data = request.json
+    if not data or 'content' not in data or "user_id" not in data:
+        abort(400, description="content and user_id are mandatory")
     new_message = Message(user_id=data['user_id'], content=data['content'])
     db.session.add(new_message)
     db.session.commit()
