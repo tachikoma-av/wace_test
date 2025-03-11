@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # Flask app service
+  web:
+    build: .
+    container_name: plumber_assistant_backend
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+      - DATABASE_URL=postgresql://postgres:password@db:5432/plumber_assistant_db
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  # PostgreSQL database service
+  db:
+    image: postgres:13
+    container_name: plumber_assistant_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: plumber_assistant_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data:
