@@ -21,4 +21,5 @@ COPY . /app/
 EXPOSE 5000
 
 # Command to run the app
-CMD flask db upgrade && flask run --host=0.0.0.0
+RUN chmod +x entrypoint.sh
+ENTRYPOINT ["/app/entrypoint.sh"]
